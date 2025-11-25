@@ -8,6 +8,8 @@ on:
   pull_request:
     branches: [ "main" ]
     types: ["merged", "closed"]
+  push:
+    branches: ["main"]
 
 jobs:
   build:
