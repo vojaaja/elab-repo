@@ -8,6 +8,8 @@ on:
   pull_request:
     branches: [ "main" ]
     types: ["merged", "closed"]
+  push:
+    branches: ["main"]
 
 jobs:
   build:
@@ -30,3 +32,10 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - run: npm test
+# dodat deo za build fajl
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-output
+        path: build
+
